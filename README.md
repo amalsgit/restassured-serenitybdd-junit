@@ -1,5 +1,5 @@
 # Java-Serenity-RestAssured-Cucumber-JUnit-Maven Sample API Automation Solution
-[![CircleCI](https://circleci.com/gh/amalsgit/restassured-serenitybdd-junit4-Java8/tree/master.svg?style=svg)](https://circleci.com/gh/amalsgit/restassured-serenitybdd-junit-cucumber/tree/master)
+[![CircleCI](https://circleci.com/gh/amalsgit/restassured-serenitybdd-junit.svg?style=svg)](https://circleci.com/gh/amalsgit/restassured-serenitybdd-junit)
 
 ## Introduction
 
@@ -28,7 +28,6 @@ src
       + commontasks                 Package for all common actions and questions
           CommonQuestions           All common questions/validations across all the domain models
           CommonRequestSpec         Common Request Spec for the API calls
-      + stepdefinitions             Step definitions for the BDD feature
       + commonutilies               Common utility methods
 src
   +test
