@@ -1,0 +1,32 @@
+
+version: 2
+jobs:
+  build:
+
+    working_directory: ~/restassured-serenitybdd-junit
+
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+
+    steps:
+
+      - checkout
+
+      - restore_cache:
+
+          key: restassured-serenitybdd-junit-{{ checksum "pom.xml" }}
+
+      - run: mvn dependency:go-offline # gets the project dependencies
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: restassured-serenitybdd-junit-{{ checksum "pom.xml" }}
+
+      - run: mvn clean verify
+
+      - store_test_results:
+          path: target/failsafe-reports
+
+      - store_artifacts:
+          path: target/site/serenity
